@@ -1,0 +1,29 @@
+
+    <%- include('navbar.ejs') %>
+
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Phone</th>
+          <th scope="col" colspan="2" class="text-center">status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% users.forEach(user => { %>
+          <tr>
+            <td><%= user.name %></td>
+            <td><%= user.email %></td>
+            <td><%= user.phone %></td>
+            <td class="float-end"><a  href="/update/<%= user._id %>" type="button" class="btn btn-outline-primary btn-sm" >Update</a></td>
+            <td ><a href="/delete/<%= user._id %>" type="button" class="btn btn-outline-primary btn-sm">Delete</a></td>
+          </tr>
+          
+        <%  }); %>
+      </tbody>
+    </table>
+
+  
+<%- include('footer.ejs') %>
